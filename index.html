@@ -294,4 +294,39 @@
                         </div>
                         <div class="flex flex-wrap gap-1.5 pt-1">
                             <button onclick="setQuickAIQuery('Central Library timings')" class="text-[11px] bg-white border border-slate-200 px-2 py-1 rounded-md text-slate-600 hover:bg-brand-50">📚 Central Library</button>
+                            
+<script>
+function handleQuickAIQuery() {
+    const input = document.getElementById("quick-ai-input");
+    if (!input) return;
+
+    const question = input.value.trim().toLowerCase();
+
+    if (!question) {
+        alert("Please enter your question!");
+        return;
+    }
+
+    let answer = "";
+
+    if (question.includes("hello") ||
+        question.includes("hi")) {
+        answer = "Hello! Welcome to CampusConnect AI. How can I help you?";
+    } else if (question.includes("library")) {
+        answer = "Please check your college's official website for library timings.";
+    } else if (question.includes("bus")) {
+        answer = "Please contact your college transport department for bus routes.";
+    } else if (question.includes("exam")) {
+        answer = "Please check official college notices for exam schedules.";
+    } else if (question.includes("deadline") ||
+               question.includes("assignment")) {
+        answer = "Open the Deadline Tracker to check your saved tasks.";
+    } else {
+        answer = "I am your CampusConnect demo assistant. Please ask about library, bus routes, exams, or deadlines.";
+    }
+
+    alert(answer);
+}
+</script>
+                            
          
